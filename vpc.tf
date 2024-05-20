@@ -19,7 +19,7 @@ resource "aws_internet_gateway" "ig" {
 resource "aws_subnet" "public_1" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.0.1.0/24"
-  availability_zone       = "us-east-2a"
+  availability_zone       = "ca-central-1a"
   map_public_ip_on_launch = true
 
   tags = {
@@ -30,7 +30,7 @@ resource "aws_subnet" "public_1" {
 resource "aws_subnet" "public_2" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.0.2.0/24"
-  availability_zone       = "us-east-2b"
+  availability_zone       = "ca-central-1b"
   map_public_ip_on_launch = true
 
   tags = {
@@ -42,7 +42,7 @@ resource "aws_subnet" "public_2" {
 resource "aws_subnet" "private_1" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.0.3.0/24"
-  availability_zone       = "us-east-2a"
+  availability_zone       = "ca-central-1a"
   map_public_ip_on_launch = false
 
   tags = {
@@ -53,7 +53,7 @@ resource "aws_subnet" "private_1" {
 resource "aws_subnet" "private_2" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.0.4.0/24"
-  availability_zone       = "us-east-2b"
+  availability_zone       = "ca-central-1b"
   map_public_ip_on_launch = false
 
   tags = {
