@@ -1,9 +1,9 @@
 resource "aws_instance" "web1" {
-  ami                         = "ami-09040d770ffe2224f"
+  ami                         = "ami-0c4596ce1e7ae3e68"
   instance_type               = "t2.micro"
   key_name                    = "two-tier-public-key"
   depends_on                  = [aws_key_pair.two-tier-public-key, aws_db_instance.project_db]
-  availability_zone           = "us-east-2a"
+  availability_zone           = "ca-central-1a"
   vpc_security_group_ids      = [aws_security_group.public_sg.id]
   subnet_id                   = aws_subnet.public_1.id
   associate_public_ip_address = true
@@ -42,11 +42,11 @@ resource "aws_instance" "web1" {
 }
 
 resource "aws_instance" "web2" {
-  ami                         = "ami-09040d770ffe2224f"
+  ami                         = "ami-0c4596ce1e7ae3e68"
   instance_type               = "t2.micro"
   key_name                    = "two-tier-public-key"
   depends_on                  = [aws_key_pair.two-tier-public-key, aws_db_instance.project_db]
-  availability_zone           = "us-east-2b"
+  availability_zone           = "ca-central-1b"
   vpc_security_group_ids      = [aws_security_group.public_sg.id]
   subnet_id                   = aws_subnet.public_2.id
   associate_public_ip_address = true
